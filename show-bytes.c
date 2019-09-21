@@ -20,8 +20,20 @@ void show_int(int x) {
     show_bytes((byte_pointer) &x, sizeof(int)); 
 }
 
+void show_short(short x) {
+	show_bytes((byte_pointer) &x, sizeof(short));
+}
+
+void show_long(long x) {
+	show_bytes((byte_pointer) &x, sizeof(long));	
+}
+
 void show_float(float x) {
     show_bytes((byte_pointer) &x, sizeof(float));
+}
+
+void show_double(double x) {
+	show_bytes((byte_pointer) &x, sizeof(double));
 }
 
 void show_pointer(void *x) {
@@ -126,6 +138,12 @@ int main(int argc, char *argv[])
 	string_ueg();
 	printf("Calling string_leg\n");
 	string_leg();
+	printf("Calling show_short\n");
+	show_short(358);
+	printf("Calling show_long\n");
+	show_long(274877906944);
+	printf("Calling show_double\n");
+	show_double(3.1415926535);
     }
     return 0;
 }
